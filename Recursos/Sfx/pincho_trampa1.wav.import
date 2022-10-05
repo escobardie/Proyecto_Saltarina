@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pincho_trampa1.wav-ba85d87bf17c25cca6183a890e7521ca.sample"
+
+[deps]
+
+source_file="res://Recursos/Sfx/pincho_trampa1.wav"
+dest_files=[ "res://.import/pincho_trampa1.wav-ba85d87bf17c25cca6183a890e7521ca.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

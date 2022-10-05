@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://JUEGO/niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://JUEGO/objetos/ElementoLlave.tscn" type="PackedScene" id=2]
+[ext_resource path="res://JUEGO/objetos/decoracion/ObjetoSeñal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://JUEGO/plataformas/PlataforChicaMedio.tscn" type="PackedScene" id=4]
+[ext_resource path="res://JUEGO/objetos/decoracion/ObjetoArbol_2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://JUEGO/objetos/decoracion/ObjetoArbusto_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://JUEGO/plataformas/PlataforChicaDer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://JUEGO/plataformas/PlataforChicaIzq.tscn" type="PackedScene" id=8]
+
+[node name="Level_2" instance=ExtResource( 1 )]
+nivel_actual = "res://JUEGO/niveles/Level_2.tscn"
+numero_nivel = "02"
+
+[node name="PlataforGrandeDer" parent="PlataformasNormal" index="0"]
+position = Vector2( -1056, 504 )
+
+[node name="PlataforGrandeIzq" parent="PlataformasNormal" index="1"]
+position = Vector2( -1440, 504 )
+
+[node name="PlataforGrandeMedio" parent="PlataformasNormal" index="2"]
+position = Vector2( -1312, 504 )
+
+[node name="PlataforGrandeMedio2" parent="PlataformasNormal" index="3"]
+position = Vector2( -1184, 504 )
+
+[node name="PlataforChicaDer" parent="PlataformaChica" index="0" instance=ExtResource( 7 )]
+position = Vector2( -408, 488 )
+
+[node name="PlataforChicaIzq" parent="PlataformaChica" index="1" instance=ExtResource( 8 )]
+position = Vector2( -664, 488 )
+
+[node name="PlataforChicaMedio" parent="PlataformaChica" index="2" instance=ExtResource( 4 )]
+position = Vector2( -536, 488 )
+
+[node name="ElementoLlave" parent="ContenedorLLaves" index="0"]
+position = Vector2( -1120, 392 )
+
+[node name="ElementoLlave2" parent="ContenedorLLaves" index="1" instance=ExtResource( 2 )]
+position = Vector2( -672, 392 )
+
+[node name="PersonajePPal" parent="." index="10"]
+position = Vector2( -1417.55, 340.014 )
+
+[node name="Portal" parent="." index="11"]
+position = Vector2( -472, 376 )
+proximo_nivel = "res://JUEGO/niveles/Level_3.tscn"
+
+[node name="ObjetoSeñal" parent="ObjetosDeco" index="0" instance=ExtResource( 3 )]
+position = Vector2( -1024, 408 )
+
+[node name="ObjetoArbol_2" parent="ObjetosDeco" index="1" instance=ExtResource( 5 )]
+position = Vector2( -1400, 304 )
+
+[node name="ObjetoArbusto_1" parent="ObjetosDeco" index="2" instance=ExtResource( 6 )]
+position = Vector2( -1304, 408 )

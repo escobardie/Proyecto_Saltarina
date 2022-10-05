@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://JUEGO/menus/botones/BotonMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://JUEGO/menus/botones/BotonSalir.gd" type="Script" id=2]
+[ext_resource path="res://Recursos/Players/bunny2_hurt.png" type="Texture" id=3]
+[ext_resource path="res://JUEGO/menus/MenuGameOver.gd" type="Script" id=4]
+[ext_resource path="res://Recursos/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.00784314, 0.180392, 0.427451, 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Recursos/Fonts/Kenney Future Narrow.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+outline_size = 2
+outline_color = Color( 0.0117647, 0, 0.113725, 1 )
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 80
+font_data = ExtResource( 5 )
+
+[node name="MenuGameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.176471, 0.803922, 0.835294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bunny2_hurt" type="Sprite" parent="."]
+position = Vector2( 440, 424 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -449.25
+margin_top = -506.964
+margin_right = -195.25
+margin_bottom = -180.964
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonReintentar" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 254.0
+margin_bottom = 95.0
+text = "reintentar"
+
+[node name="BotonMenuPPal" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 107.0
+margin_right = 254.0
+margin_bottom = 202.0
+text = "menu principal"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 214.0
+margin_right = 254.0
+margin_bottom = 218.0
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer"]
+margin_top = 230.0
+margin_right = 254.0
+margin_bottom = 326.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "salir"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0.168627, 0.00784314, 0.247059, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -464.0
+margin_top = -128.0
+margin_right = 56.0
+margin_bottom = -8.0
+rect_rotation = -11.4673
+custom_fonts/font = SubResource( 4 )
+text = "game over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/BotonReintentar" to="." method="_on_BotonReintentar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonMenuPPal" to="." method="_on_BotonMenuPPal_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_pressed"]
